@@ -1,0 +1,77 @@
+
+body {
+    background-image: url(../images/seigaiha.png);
+}
+.quoteMachine {
+    height: rem(500px);
+    padding: rem(10px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin-top: rem(50px);
+
+    h1 {
+        font-size: rem(60px);
+        font-family: 'Great Vibes', cursive;
+    }
+
+    button {
+        background: skyblue;
+        border: none;
+        width: rem(180px);
+        height: rem(40px);
+        margin: rem(30px) auto;
+        font-family: 'Courgette', cursive;
+        font-size: rem(25px);
+        border-radius: 5px;
+        box-shadow: -3px 4px 10px 1px rgba(0,0,0,0.75);
+    }
+
+    .quote {
+        border: 1px solid lightgray;
+        padding: rem(15px);
+        width: rem(500px);
+        background: whitesmoke;
+    }
+
+    .quoteText {
+        font-size: rem(22px);
+        margin-bottom: rem(10px);
+        font-family: 'Cinzel', serif;
+    }
+
+    .quoteAuthor {
+        font-size: rem(30px);
+        font-family: 'Courgette', cursive;
+    }
+}
+
+
+@media  (max-width: 720px) {
+    .quoteMachine {
+        width: 100%;
+        height: rem(500px);
+        
+        h1 {
+            font-size: rem(45px);
+            margin: 0 auto;
+        }
+        button{
+            font-size: rem(20px);
+            margin: rem(15px) auto;
+        }
+        .quote{
+            width: 80%;
+            height: auto;
+            margin-bottom: rem(50px);
+            .quoteText {
+                font-size: rem(17px);
+                margin-bottom: rem(10px);
+                font-family: 'Cinzel', serif;
+            }
+        }
+    }
+}
+
