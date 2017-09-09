@@ -1,16 +1,17 @@
 
 body {
     background-image: url(../images/seigaiha.png);
+    height: 100%;
 }
 .quoteMachine {
-    height: rem(500px);
-    padding: rem(10px);
+    height: 100%;
+    padding: rem(20px);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    margin-top: rem(50px);
+    margin-top: rem(160px);
 
     h1 {
         font-size: rem(60px);
@@ -32,12 +33,12 @@ body {
     .quote {
         border: 1px solid lightgray;
         padding: rem(15px);
-        width: rem(500px);
+        width: rem(600px);
         background: whitesmoke;
     }
 
     .quoteText {
-        font-size: rem(22px);
+        font-size: rem(24px);
         margin-bottom: rem(10px);
         font-family: 'Cinzel', serif;
     }
@@ -51,12 +52,9 @@ body {
 
 @media  (max-width: 720px) {
     .quoteMachine {
-        width: 100%;
-        height: rem(500px);
-        
+
         h1 {
             font-size: rem(45px);
-            margin: 0 auto;
         }
         button{
             font-size: rem(20px);
@@ -65,11 +63,12 @@ body {
         .quote{
             width: 80%;
             height: auto;
-            margin-bottom: rem(50px);
+            margin-top: rem(8px);
             .quoteText {
-                font-size: rem(17px);
-                margin-bottom: rem(10px);
-                font-family: 'Cinzel', serif;
+                font-size: rem(18px);
+            }
+            .quoteAuthor{
+                font-size: rem(22px);
             }
         }
     }
