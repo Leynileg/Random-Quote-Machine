@@ -22623,10 +22623,14 @@ var QuoteMachine = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (QuoteMachine.__proto__ || Object.getPrototypeOf(QuoteMachine)).call(this, props));
 
-        _this.handleClick = function () {
-            var num = Math.floor(Math.random() * _this.state.container.length - 1);
-            _this.setState({ quote: _this.state.container[num].quote });
-            _this.setState({ author: _this.state.container[num].author });
+        _this.handleClick = function (e) {
+            if (_this.state.container.length < 1) {
+                _this.setState({ quote: 'Quotes are loading' });
+            } else {
+                var num = Math.floor(Math.random() * _this.state.container.length) + 1;
+                _this.setState({ quote: _this.state.container[num].quote });
+                _this.setState({ author: _this.state.container[num].author });
+            }
         };
 
         _this.state = {
@@ -22642,7 +22646,7 @@ var QuoteMachine = function (_React$Component) {
         value: function getData() {
             var _this2 = this;
 
-            fetch('https://random-quote-generator.herokuapp.com/api/quotes/').then(function (response) {
+            fetch('https://talaikis.com/api/quotes/').then(function (response) {
                 if (response.ok) {
                     return response.json();
                 } else {
@@ -22662,37 +22666,29 @@ var QuoteMachine = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'row' },
+                { className: 'container' },
+                _react2.default.createElement(
+                    'h1',
+                    null,
+                    'Random Quote Machine'
+                ),
+                _react2.default.createElement(
+                    'button',
+                    { onClick: this.handleClick },
+                    'New Quote'
+                ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'col-12-12' },
+                    { className: 'quote' },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'quoteMachine' },
-                        _react2.default.createElement(
-                            'h1',
-                            null,
-                            'Random Quote Machine'
-                        ),
-                        _react2.default.createElement(
-                            'button',
-                            { onClick: this.handleClick },
-                            'New Quote'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'quote' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'quoteText' },
-                                this.state.quote
-                            ),
-                            _react2.default.createElement(
-                                'h2',
-                                { className: 'quoteAuthor' },
-                                this.state.author
-                            )
-                        )
+                        'p',
+                        { className: 'quoteText' },
+                        this.state.quote
+                    ),
+                    _react2.default.createElement(
+                        'h2',
+                        { className: 'quoteAuthor' },
+                        this.state.author
                     )
                 )
             );
